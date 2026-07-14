@@ -26,6 +26,7 @@ switch (args.robot) {
     case "Dreame L10 Pro":
     case "Dreame D10S Plus":
     case "Dreame D10S Pro":
+    case "Mova P10 Pro Ultra":
         MAP_PATHS = ["/data/ri", "/data/map", "/data/DivideMap", "/data/config/ava/mult_map.json"];
         break;
     case "Dreame F9":
