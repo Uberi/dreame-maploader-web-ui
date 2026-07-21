@@ -26,6 +26,7 @@ switch (args.robot) {
     case "Dreame L10 Pro":
     case "Dreame D10S Plus":
     case "Dreame D10S Pro":
+    case "Mova P10 Pro Ultra":
         MAP_PATHS = ["/data/ri", "/data/map", "/data/DivideMap", "/data/config/ava/mult_map.json"];
         break;
     case "Dreame F9":
@@ -148,7 +149,7 @@ http.createServer((req, res) => {
 
 function listMaps() {
     if (!fs.existsSync(SAVE_PATH)) { return []; }
-    return fs.readdirSync(SAVE_PATH).map(mapFile => (mapFile.match(/(\w+)\.tar\.gz/) || [])[1]).filter(mapName => mapName);
+    return fs.readdirSync(SAVE_PATH).map(mapFile => (mapFile.match(/^(\w+)\.tar\.gz$/) || [])[1]).filter(mapName => mapName);
 }
 
 function loadMap(mapName) {
