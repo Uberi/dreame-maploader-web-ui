@@ -149,7 +149,7 @@ http.createServer((req, res) => {
 
 function listMaps() {
     if (!fs.existsSync(SAVE_PATH)) { return []; }
-    return fs.readdirSync(SAVE_PATH).map(mapFile => (mapFile.match(/(\w+)\.tar\.gz/) || [])[1]).filter(mapName => mapName);
+    return fs.readdirSync(SAVE_PATH).map(mapFile => (mapFile.match(/^(\w+)\.tar\.gz$/) || [])[1]).filter(mapName => mapName);
 }
 
 function loadMap(mapName) {
